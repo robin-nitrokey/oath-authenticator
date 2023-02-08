@@ -132,7 +132,7 @@ impl<K: EncryptionKeyGetter> State<K> {
     where
         T: trussed::Client + trussed::client::Chacha8Poly1305,
     {
-        let encryption_key = K::get_encryption_key();
+        let encryption_key = K::get_encryption_key(trussed);
         return Ok(encryption_key);
 
         // Try to read it

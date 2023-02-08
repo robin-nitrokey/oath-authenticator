@@ -119,11 +119,11 @@ impl trussed::platform::UserInterface for UserInterface {
 struct KeyGetter {}
 
 impl EncryptionKeyGetter for KeyGetter {
-    fn get_encryption_key() -> KeyId {
+    fn get_encryption_key<C: Client>(client: &mut C) -> KeyId {
         todo!()
     }
 
-    fn get_encryption_key_for_password(password: &[u8]) -> KeyId {
+    fn get_encryption_key_for_password<C: Client>(client: &mut C, password: &[u8]) -> KeyId {
         todo!()
     }
 }
